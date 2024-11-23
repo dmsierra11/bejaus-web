@@ -1,21 +1,37 @@
+/* Tailwind CSS Base, Components, and Utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Root Variables for Color Palette */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #EDE6D6; /* Soft neutral for the background */
+  --foreground: #0D4F42; /* Primary deep green */
+  --accent: #C55A11;     /* Warm accent color */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0D4F42; /* Deep green for dark mode */
+    --foreground: #EDE6D6; /* Soft neutral text on dark */
+    --accent: #C55A11;     /* Accent remains the same */
   }
 }
 
+/* Body Styling */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif; /* Replace with custom font if needed */
+}
+
+/* Utility Styles */
+button {
+  @apply px-6 py-2 rounded font-medium transition;
+  background-color: var(--accent);
+  color: var(--background);
+}
+button:hover {
+  background-color: var(--foreground);
+  color: var(--accent);
 }
