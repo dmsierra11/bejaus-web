@@ -5,6 +5,8 @@ import ImageTextSection from "@/components/ImageTextSection";
 import MenuSection from "@/components/MenuSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import EventsOffers from "@/components/EventsOffers";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 export default function Home() {
   return (
@@ -25,10 +27,8 @@ export default function Home() {
       <ImageTextSection
         title="Our Philosophy"
         description="We believe in creating a space that brings together design, comfort, and exceptional coffee. Our approach combines the timeless principles of Bauhaus design with the warmth of a neighborhood café."
-        imageSrc="/philosophy-image.jpg"
+        imageSrc="/barna_bejaus.jpg"
         imageAlt="Bejaus coffee shop interior"
-        bgColor="bg-primary"
-        textColor="text-background"
       />
 
       <ImageTextSection
@@ -37,8 +37,6 @@ export default function Home() {
         imageSrc="/community.jpg"
         imageAlt="Bejaus community gathering"
         imagePosition="right"
-        bgColor="bg-background"
-        textColor="text-primary"
       />
 
       <MenuSection
@@ -72,7 +70,16 @@ export default function Home() {
         subscribeDescription="Subscribe to our newsletter for updates, events, and special offers."
       />
 
-      <Footer />
+      <EventsOffers events={[]} />
+
+      <Footer
+        additionalContent={
+          <NewsletterSignup
+            title="Stay Connected"
+            description="Subscribe to our newsletter for updates, events, and special offers."
+          />
+        }
+      />
     </main>
   );
 }

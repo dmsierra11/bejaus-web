@@ -6,8 +6,7 @@ interface ImageTextSectionProps {
   imageSrc: string;
   imageAlt: string;
   imagePosition?: "left" | "right";
-  bgColor?: string;
-  textColor?: string;
+  theme?: "primary" | "secondary";
 }
 
 export default function ImageTextSection({
@@ -16,11 +15,16 @@ export default function ImageTextSection({
   imageSrc,
   imageAlt,
   imagePosition = "left",
-  bgColor = "bg-primary",
-  textColor = "text-background",
+  // bgColor = "bg-primary",
+  // textColor = "text-background",
+  theme = "secondary",
 }: ImageTextSectionProps) {
   return (
-    <section className={`p-12 ${bgColor} ${textColor}`}>
+    <section
+      className={`p-12 ${
+        theme === "primary" ? "bg-primary" : "bg-background"
+      } ${theme === "primary" ? "text-background" : "text-primary"}`}
+    >
       <div
         className={`max-w-6xl mx-auto flex flex-col ${
           imagePosition === "right" ? "md:flex-row-reverse" : "md:flex-row"
