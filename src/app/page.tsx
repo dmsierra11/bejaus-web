@@ -48,15 +48,18 @@ export default function Home() {
             title: "Brunch",
             description:
               "A delightful mix of sandwiches, homemade bread, and healthy bowls.",
+            imageSrc: "/brunch.jpg",
           },
           {
             title: "Specialty Coffee",
             description: "Carefully brewed with love, featuring local roasts.",
+            imageSrc: "/coffee.jpg",
           },
           {
             title: "Craft Beer",
             description:
               "Experience local craft beer and vermouth with appetizers.",
+            imageSrc: "/beer.jpg",
           },
         ]}
         theme="secondary"
