@@ -3,7 +3,7 @@ import React from "react";
 interface LocationHoursProps {
   address: string;
   hours: string;
-  mapLink: string;
+  mapLink?: string;
 }
 
 const LocationHours: React.FC<LocationHoursProps> = ({
@@ -20,9 +20,11 @@ const LocationHours: React.FC<LocationHoursProps> = ({
       <p>
         <strong>Hours:</strong> {hours}
       </p>
-      <a href={mapLink} target="_blank" rel="noopener noreferrer">
-        Get Directions
-      </a>
+      {mapLink && (
+        <a href={mapLink} target="_blank" rel="noopener noreferrer">
+          Get Directions
+        </a>
+      )}
     </section>
   );
 };

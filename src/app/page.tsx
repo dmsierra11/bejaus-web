@@ -5,7 +5,6 @@ import ImageTextSection from "@/components/ImageTextSection";
 import MenuSection from "@/components/MenuSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import EventsOffers from "@/components/EventsOffers";
 import NewsletterSignup from "@/components/NewsletterSignup";
 
 export default function Home() {
@@ -69,8 +68,6 @@ export default function Home() {
         subscribeTitle="Stay Connected"
         subscribeDescription="Subscribe to our newsletter for updates, events, and special offers."
       />
-
-      {/* <EventsOffers events={[]} /> */}
 
       <Footer
         additionalContent={

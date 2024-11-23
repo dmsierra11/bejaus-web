@@ -22,7 +22,6 @@ export default function Footer({
           <LocationHours
             address="Les Corts, Barcelona"
             hours="Mon-Sun: 8am-10pm"
-            mapLink="https://maps.google.com"
           />
         </div>
 
