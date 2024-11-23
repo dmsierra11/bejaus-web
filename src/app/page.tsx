@@ -70,7 +70,7 @@ export default function Home() {
         subscribeDescription="Subscribe to our newsletter for updates, events, and special offers."
       />
 
-      <EventsOffers events={[]} />
+      {/* <EventsOffers events={[]} /> */}
 
       <Footer
         additionalContent={

@@ -1,33 +1,111 @@
 "use client";
+import { useState } from "react";
+
 interface ContactSectionProps {
   title: string;
   contactInfo: string;
   subscribeTitle: string;
   subscribeDescription: string;
-  onSubscribe?: (email: string) => void;
+  onSubmit?: (formData: {
+    name: string;
+    email: string;
+    message: string;
+    phone?: string;
+  }) => void;
 }
 
 export default function ContactSection({
   title = "Contact Us",
   contactInfo,
-  subscribeTitle = "Stay Connected",
-  subscribeDescription = "Subscribe to our newsletter for updates, events, and special offers.",
-  onSubscribe,
+  onSubmit,
 }: ContactSectionProps) {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+    phone: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-    if (onSubscribe) {
-      onSubscribe(email);
+    if (onSubmit) {
+      onSubmit(formData);
     }
   };
 
   return (
-    <section id="contact" className="p-12">
+    <section id="contact" className="p-12 bg-background text-primary">
       <div className="max-w-4xl mx-auto">
         <h3 className="text-3xl font-semibold text-center mb-6">{title}</h3>
-        <p className="text-center mb-12">{contactInfo}</p>
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Map Section */}
+          <div className="flex-1 mb-12 md:mb-0">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153167!3d-37.81627927975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d1f9f1f1f1f1!2sYour%20Address!5e0!3m2!1sen!2sus!4v1614311234567!5m2!1sen!2sus"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+            ></iframe>
+          </div>
+          {/* Contact Form */}
+          <div className="flex-1 flex items-center">
+            <form onSubmit={handleSubmit} className="text-center w-full">
+              <p className="mb-4">
+                Have questions, feedback, or just want to say hi? We'd love to
+                hear from you!
+              </p>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Enter your name"
+                className="border p-2 mb-4 w-full"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+                className="border p-2 mb-4 w-full"
+                required
+              />
+              <input
+                type="text"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Enter your phone number"
+                className="border p-2 mb-4 w-full"
+              />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Enter your message"
+                className="border p-2 mb-4 w-full h-32"
+                required
+              />
+              <button
+                type="submit"
+                className="bg-accent text-background px-6 py-2 rounded hover:bg-background hover:text-accent transition-colors"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );
