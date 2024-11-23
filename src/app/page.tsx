@@ -1,88 +1,75 @@
-import Image from "next/image";
+"use client";
+
+import Hero from "@/components/Hero";
+import ImageTextSection from "@/components/ImageTextSection";
+import MenuSection from "@/components/MenuSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-background text-primary min-h-screen">
-      {/* Header */}
-      <header className="flex justify-between items-center p-6">
-        <h1 className="text-2xl font-bold">Bejaus</h1>
-        <nav>
-          <ul className="flex space-x-6">
-            <li>
-              <a href="#about" className="hover:text-accent">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#menu" className="hover:text-accent">
-                Menu
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-accent">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+    <main>
+      <Hero
+        title="Welcome to Bejaus"
+        subtitle="A space where coffee, creativity, and community meet."
+        buttonText="Explore our menu"
+        videoSrc="/coffee1.mp4"
+        onButtonClick={() => {
+          // Handle button click
+          document
+            .getElementById("menu")
+            ?.scrollIntoView({ behavior: "smooth" });
+        }}
+      />
 
-      {/* Hero Section */}
-      <section className="text-center py-20 bg-primary text-background">
-        <h2 className="text-4xl font-bold mb-4">Welcome to Bejaus</h2>
-        <p className="text-lg mb-8">
-          A space where coffee, creativity, and community meet.
-        </p>
-        <button className="bg-accent text-background hover:bg-primary hover:text-accent">
-          Explore our menu
-        </button>
-      </section>
+      <ImageTextSection
+        title="Our Philosophy"
+        description="We believe in creating a space that brings together design, comfort, and exceptional coffee. Our approach combines the timeless principles of Bauhaus design with the warmth of a neighborhood café."
+        imageSrc="/philosophy-image.jpg"
+        imageAlt="Bejaus coffee shop interior"
+        bgColor="bg-primary"
+        textColor="text-background"
+      />
 
-      {/* About Section */}
-      <section id="about" className="p-12">
-        <h3 className="text-3xl font-semibold text-center mb-6">
-          About Bejaus
-        </h3>
-        <p className="max-w-3xl mx-auto text-center">
-          Inspired by the Bauhaus, Bejaus is a café in Les Corts where you can
-          enjoy specialty coffee, homemade brunch, and a vibrant atmosphere.
-        </p>
-      </section>
+      <ImageTextSection
+        title="Community"
+        description="More than just a café, we're a gathering place for creatives, coffee enthusiasts, and neighbors. Our space is designed to foster connections and inspire collaboration within our vibrant Les Corts community."
+        imageSrc="/community.jpg"
+        imageAlt="Bejaus community gathering"
+        imagePosition="right"
+        bgColor="bg-background"
+        textColor="text-primary"
+      />
 
-      {/* Menu Section */}
-      <section id="menu" className="p-12 bg-gray-100">
-        <h3 className="text-3xl font-semibold text-center mb-6">Our Menu</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="p-4 bg-background shadow rounded">
-            <h4 className="text-xl font-bold">Brunch</h4>
-            <p>
-              A delightful mix of sandwiches, homemade bread, and healthy bowls.
-            </p>
-          </div>
-          <div className="p-4 bg-background shadow rounded">
-            <h4 className="text-xl font-bold">Specialty Coffee</h4>
-            <p>Carefully brewed with love, featuring local roasts.</p>
-          </div>
-          <div className="p-4 bg-background shadow rounded">
-            <h4 className="text-xl font-bold">Craft Beer</h4>
-            <p>Experience local craft beer and vermouth with appetizers.</p>
-          </div>
-        </div>
-      </section>
+      <MenuSection
+        sectionTitle="Our Menu"
+        items={[
+          {
+            title: "Brunch",
+            description:
+              "A delightful mix of sandwiches, homemade bread, and healthy bowls.",
+          },
+          {
+            title: "Specialty Coffee",
+            description: "Carefully brewed with love, featuring local roasts.",
+          },
+          {
+            title: "Craft Beer",
+            description:
+              "Experience local craft beer and vermouth with appetizers.",
+          },
+        ]}
+        theme="secondary"
+      />
 
-      {/* Contact Section */}
-      <section id="contact" className="p-12">
-        <h3 className="text-3xl font-semibold text-center mb-6">Contact Us</h3>
-        <p className="text-center">
-          Visit us at Les Corts, Barcelona, or follow us on Instagram
-          @bejauscafe.
-        </p>
-      </section>
+      <ContactSection
+        title="Contact Us"
+        contactInfo="Visit us at Les Corts, Barcelona, or follow us on Instagram @bejauscafe."
+        subscribeTitle="Stay Connected"
+        subscribeDescription="Subscribe to our newsletter for updates, events, and special offers."
+      />
 
-      {/* Footer */}
-      <footer className="bg-primary text-background py-6 text-center">
-        <p>&copy; {new Date().getFullYear()} Bejaus. All rights reserved.</p>
-      </footer>
+      <Footer />
     </main>
   );
 }
