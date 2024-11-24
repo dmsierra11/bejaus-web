@@ -22,13 +22,13 @@ export default function MenuSection({
       id="menu"
       className={`p-12 ${theme === "primary" ? "bg-primary" : ""}`}
     >
-      <h3
-        className={`text-3xl font-semibold text-center mb-6 ${
+      <h2
+        className={`${
           theme === "primary" ? "text-background" : "text-primary"
         }`}
       >
         {sectionTitle}
-      </h3>
+      </h2>
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map((item, index) => (
           <div

@@ -30,7 +30,7 @@ export default function Footer({
           />
           <div className="mt-4">
             <p>
-              <strong>Contact Us:</strong>
+              <strong>Contacta con nosotros:</strong>
             </p>
             <p>
               <a href="mailto:hola@bejaus.com" className="underline">

@@ -15,15 +15,13 @@ export default function ImageTextSection({
   imageSrc,
   imageAlt,
   imagePosition = "left",
-  // bgColor = "bg-primary",
-  // textColor = "text-background",
   theme = "secondary",
 }: ImageTextSectionProps) {
   return (
     <section
-      className={`p-12 ${
-        theme === "primary" ? "bg-primary" : "bg-background"
-      } ${theme === "primary" ? "text-background" : "text-primary"}`}
+      className={`p-8 ${theme === "primary" ? "bg-primary" : "bg-background"} ${
+        theme === "primary" ? "text-background" : "text-primary"
+      }`}
     >
       <div
         className={`max-w-6xl mx-auto flex flex-col ${
@@ -43,7 +41,7 @@ export default function ImageTextSection({
 
         {/* Text container */}
         <div className="w-full md:w-1/2">
-          <h3 className="text-3xl font-semibold mb-6">{title}</h3>
+          <h3>{title}</h3>
           <p className="text-lg">{description}</p>
         </div>
       </div>

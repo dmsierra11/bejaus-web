@@ -12,7 +12,7 @@ interface ContactSectionProps {
 }
 
 export default function ContactSection({
-  title = "Contact Us",
+  title = "Contacta con nosotros",
   onSubmit,
 }: ContactSectionProps) {
   const [formData, setFormData] = useState({
@@ -38,15 +38,18 @@ export default function ContactSection({
 
   return (
     <section id="contact" className="p-12 bg-background text-primary">
-      <div className="max-w-4xl mx-auto">
-        <h3 className="text-3xl font-semibold text-center mb-6">{title}</h3>
+      <div className="max-w-6xl mx-auto">
+        <h2>{title}</h2>
+        <p className="mb-4">
+          Si tienes alguna pregunta, sugerencia o simplemente quieres
+          saludarnos, no dudes en escribirnos.
+        </p>
         <div className="flex flex-col md:flex-row gap-8">
-          {/* Contact Form */}
           <div className="flex-1 flex items-center order-1 md:order-2">
             <form onSubmit={handleSubmit} className="text-center w-full">
               <p className="mb-4 text-center">
-                Have questions, feedback, or just want to say hi? We&apos;d love
-                to hear from you!
+                Completa el formulario y nos pondremos en contacto contigo lo
+                antes posible.
               </p>
               <input
                 type="text"

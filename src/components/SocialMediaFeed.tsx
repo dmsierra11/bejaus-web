@@ -9,7 +9,7 @@ const SocialMediaFeed: React.FC<SocialMediaFeedProps> = ({
 }) => {
   return (
     <section id="social-media-feed" className="social-media-feed">
-      <h2>Follow Us on Instagram</h2>
+      <h4>Síguenos en las redes</h4>
       <a
         href={`https://instagram.com/${instagramHandle}`}
         target="_blank"

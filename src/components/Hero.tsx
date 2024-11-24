@@ -1,6 +1,9 @@
 "use client";
 
 import React from "react";
+import BejausLogo from "../../public/bejaus_02.svg";
+// import BejausLogo from "../../public/bejaus_14-15.svg";
+// import BejausLogo from "../../public/bejaus_02.svg";
 
 interface HeroProps {
   title: string;
@@ -37,7 +40,11 @@ export default function Hero({
       <div className="relative h-screen flex flex-col">
         {/* Header */}
         <header className="flex justify-between items-center p-6">
-          <h1 className="text-2xl font-bold text-background">Bejaus</h1>
+          <div className="relative">
+            <div className="absolute top-0 left-0">
+              <BejausLogo className="h-32 w-auto" />
+            </div>
+          </div>
           <nav>
             <ul className="flex space-x-6 text-background">
               <li>
@@ -46,11 +53,6 @@ export default function Hero({
                   className="hover:text-accent transition-colors"
                 >
                   About
-                </a>
-              </li>
-              <li>
-                <a href="#menu" className="hover:text-accent transition-colors">
-                  Menu
                 </a>
               </li>
               <li>

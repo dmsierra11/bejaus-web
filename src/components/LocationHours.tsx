@@ -13,7 +13,7 @@ const LocationHours: React.FC<LocationHoursProps> = ({
 }) => {
   return (
     <section id="location-hours" className="location-hours">
-      <h2>Location & Hours</h2>
+      <h4 className="font-bold">Dónde y Horarios</h4>
       <p>
         <strong>Address:</strong> {address}
       </p>
