@@ -72,12 +72,7 @@ export default function Hero({
           <div className="text-center text-background">
             <h2 className="text-4xl font-bold mb-4">{title}</h2>
             <p className="text-lg mb-8">{subtitle}</p>
-            <button
-              onClick={onButtonClick}
-              className="bg-accent text-background px-6 py-2 rounded hover:bg-primary hover:text-accent"
-            >
-              {buttonText}
-            </button>
+            <button onClick={onButtonClick}>{buttonText}</button>
           </div>
         </div>
       </div>

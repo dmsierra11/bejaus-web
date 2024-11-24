@@ -5,9 +5,11 @@
 
 /* Root Variables for Color Palette */
 :root {
+  --primary: #0D4F42; /* Primary color */
+  --secondary: #EDE6D6; /* Secondary color */
+  --accent: #C55A11;     /* Warm accent color */
   --background: #EDE6D6; /* Soft neutral for the background */
   --foreground: #0D4F42; /* Primary deep green */
-  --accent: #C55A11;     /* Warm accent color */
   --font-grover: "grover", sans-serif; /* Define the Grover font */
   --font-helvetica: "Helvetica", "Arial", sans-serif; /* Define the Helvetica font */
 }
@@ -49,12 +51,12 @@ h3 {
 
 /* Utility Styles */
 button {
-  @apply px-6 py-2 rounded font-medium transition;
+  @apply px-6 py-2 rounded transition-colors;
   background-color: var(--accent);
   color: var(--background);
 }
 button:hover {
-  background-color: var(--foreground);
+  background-color: var(--background);
   color: var(--accent);
 }
 
@@ -71,4 +73,8 @@ em {
 .sc-text {
   font-family: "grover-sc", sans-serif; /* Small caps */
   font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
 }
