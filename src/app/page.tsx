@@ -3,7 +3,6 @@
 import Hero from "@/components/Hero";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import NewsletterSignup from "@/components/NewsletterSignup";
 import AboutSection from "@/components/AboutSection";
 
 export default function Home() {
@@ -26,14 +25,7 @@ export default function Home() {
 
       <ContactSection title="Contacta con nosotros" />
 
-      <Footer
-        additionalContent={
-          <NewsletterSignup
-            title="Stay Connected"
-            description="Subscribe to our newsletter for updates, events, and special offers."
-          />
-        }
-      />
+      <Footer />
     </main>
   );
 }

@@ -28,16 +28,6 @@ export default function Footer({
             address="Carrer de l'Equador, 89, Les Corts, 08029 Barcelona"
             hours="Mon-Sun: 8 AM - 10 PM"
           />
-          <div className="mt-4">
-            <p>
-              <strong>Contacta con nosotros:</strong>
-            </p>
-            <p>
-              <a href="mailto:hola@bejaus.com" className="underline">
-                hola@bejaus.com
-              </a>
-            </p>
-          </div>
         </div>
 
         {additionalContent && (
