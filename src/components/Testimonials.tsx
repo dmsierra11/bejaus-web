@@ -16,7 +16,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ reviews }) => {
       <ul>
         {reviews.map((review, index) => (
           <li key={index}>
-            <blockquote>"{review.quote}"</blockquote>
+            <blockquote>&quot;{review.quote}&quot;</blockquote>
             <cite>- {review.author}</cite>
           </li>
         ))}

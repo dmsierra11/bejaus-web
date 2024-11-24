@@ -16,7 +16,6 @@ interface ContactSectionProps {
 
 export default function ContactSection({
   title = "Contact Us",
-  contactInfo,
   onSubmit,
 }: ContactSectionProps) {
   const [formData, setFormData] = useState({
@@ -61,8 +60,8 @@ export default function ContactSection({
           <div className="flex-1 flex items-center">
             <form onSubmit={handleSubmit} className="text-center w-full">
               <p className="mb-4">
-                Have questions, feedback, or just want to say hi? We'd love to
-                hear from you!
+                Have questions, feedback, or just want to say hi? We&apos;d love
+                to hear from you!
               </p>
               <input
                 type="text"

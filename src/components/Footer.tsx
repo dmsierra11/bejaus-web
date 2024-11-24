@@ -1,5 +1,4 @@
 import LocationHours from "./LocationHours";
-import NewsletterSignup from "./NewsletterSignup";
 import SocialMediaFeed from "./SocialMediaFeed";
 
 interface FooterProps {
