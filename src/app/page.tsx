@@ -1,7 +1,7 @@
 "use client";
 
 import Hero from "@/components/Hero";
-import ContactSection from "@/components/ContactSection";
+// import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 
@@ -23,7 +23,7 @@ export default function Home() {
 
       <AboutSection />
 
-      <ContactSection title="Contacta con nosotros" />
+      {/* <ContactSection title="Contacta con nosotros" /> */}
 
       <Footer />
     </main>
