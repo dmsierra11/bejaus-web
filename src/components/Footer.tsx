@@ -18,17 +18,16 @@ export default function Footer({
   return (
     <footer className={`${bgColor} ${textColor} py-6`}>
       <div className="w-full px-4 flex flex-col md:flex-row justify-between items-start">
-        {/* Location, Hours, and Contact Info */}
-        <div
+        {/* <div
           id="location-contact"
           className="flex-none mb-4 md:mb-0"
           style={{ flexBasis: "20%" }}
         >
           <LocationHours
             address="Carrer de l'Equador, 89, Les Corts, 08029 Barcelona"
-            hours="Mon-Sun: 8 AM - 10 PM"
+            hours="Lun-Vier: 7:30 AM - 9:30 PM"
           />
-        </div>
+        </div> */}
 
         {additionalContent && (
           <div

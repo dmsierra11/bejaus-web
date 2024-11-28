@@ -15,10 +15,10 @@ const LocationHours: React.FC<LocationHoursProps> = ({
     <section id="location-hours" className="location-hours">
       <h4 className="font-bold">Dónde y Horarios</h4>
       <p>
-        <strong>Address:</strong> {address}
+        <strong>Donde:</strong> {address}
       </p>
       <p>
-        <strong>Hours:</strong> {hours}
+        <strong>Horario:</strong> {hours}
       </p>
       {mapLink && (
         <a href={mapLink} target="_blank" rel="noopener noreferrer">
