@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <main>
       <Hero
-        title="Welcome to Bejaus"
-        subtitle="A space where coffee, creativity, and community meet."
+        title="Bienvenidos a Bejaus"
+        subtitle="Un lugar donde el café, la creatividad y la comunidad se encuentran."
         buttonText="Conócenos"
         videoSrc="/coffee1.mp4"
         onButtonClick={() => {

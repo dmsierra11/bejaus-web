@@ -2,8 +2,6 @@
 
 import React from "react";
 import BejausLogo from "../../public/bejaus_02.svg";
-// import BejausLogo from "../../public/bejaus_14-15.svg";
-// import BejausLogo from "../../public/bejaus_02.svg";
 
 interface HeroProps {
   title: string;
@@ -45,7 +43,7 @@ export default function Hero({
               <BejausLogo className="h-32 w-auto" />
             </div>
           </div>
-          <nav>
+          {/* <nav>
             <ul className="flex space-x-6 text-background">
               <li>
                 <a
@@ -64,7 +62,7 @@ export default function Hero({
                 </a>
               </li>
             </ul>
-          </nav>
+          </nav> */}
         </header>
 
         {/* Hero Content */}

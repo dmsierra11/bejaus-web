@@ -29,10 +29,29 @@ export default function ContactSection({
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (onSubmit) {
-      onSubmit(formData);
+    console.log("Submitting form with data:", formData);
+    try {
+      const response = await fetch("https://formspree.io/f/xzzbavqy", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log("Form submitted successfully");
+        // Aquí puedes manejar la respuesta, por ejemplo, mostrar un mensaje de éxito
+      } else {
+        const errorData = await response.json();
+        console.error("Error submitting form:", errorData);
+        // Aquí puedes manejar el error, por ejemplo, mostrar un mensaje de error
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      // Aquí puedes manejar el error, por ejemplo, mostrar un mensaje de error
     }
   };
 
@@ -56,7 +75,7 @@ export default function ContactSection({
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Enter your name"
+                placeholder="Introduce tu nombre"
                 className="border p-2 mb-4 w-full"
                 required
               />
@@ -65,7 +84,7 @@ export default function ContactSection({
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Enter your email"
+                placeholder="Introduce tu correo electrónico"
                 className="border p-2 mb-4 w-full"
                 required
               />
@@ -74,14 +93,14 @@ export default function ContactSection({
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="Enter your phone number"
+                placeholder="Introduce tu teléfono"
                 className="border p-2 mb-4 w-full"
               />
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Enter your message"
+                placeholder="Introduce tu mensaje"
                 className="border p-2 mb-4 w-full h-32"
                 required
               />
@@ -89,12 +108,22 @@ export default function ContactSection({
                 type="submit"
                 className="bg-accent text-background px-6 py-2 rounded hover:bg-background hover:text-accent transition-colors"
               >
-                Submit
+                Enviar
               </button>
+              <p className="mt-4 text-sm">
+                Al enviar este formulario, aceptas nuestra{" "}
+                <a
+                  href="/privacy-policy"
+                  className="text-accent hover:underline"
+                >
+                  Política de Privacidad
+                </a>
+                .
+              </p>
             </form>
           </div>
 
-          {/* Map and Contact Info */}
+          {/* Mapa e Información de Contacto */}
           <div className="flex-1 mb-12 md:mb-0 order-2 md:order-1">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11973.474384282477!2d2.1277698613120215!3d41.38780093953926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4987ba239aaf5%3A0xb7470b80311eb856!2sCarrer%20de%20l&#39;Equador%2C%2089%2C%20Les%20Corts%2C%2008029%20Barcelona!5e0!3m2!1sen!2ses!4v1732372006315!5m2!1sen!2ses"
@@ -103,8 +132,7 @@ export default function ContactSection({
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            />
           </div>
         </div>
       </div>
