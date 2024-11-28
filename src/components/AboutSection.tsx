@@ -7,28 +7,28 @@ const AboutSection: React.FC = () => {
       <div id="about" className="max-w-6xl mx-auto">
         <h2>Quienes Somos</h2>
         <p className="text-lg mt-8">
-          Bejaus es más que un café: es un punto de encuentro en el corazón de
-          Les Corts. Inspirados por la vibrante energía de Barcelona, hemos
-          creado un espacio acogedor donde disfrutar de café de especialidad,
-          cervezas locales y una gastronomía fresca y de proximidad. Nuestro
-          enfoque es simple: calidad en cada detalle, desde el primer sorbo de
-          café hasta el último bocado de un pastel casero.
+          Bejaus es mucho más que un café: es un espacio único en el corazón de
+          Les Corts. Inspirados por la energía vibrante de Barcelona, hemos
+          creado un lugar acogedor donde disfrutar de café de especialidad,
+          cervezas locales y una gastronomía fresca, de proximidad y de calidad.
+          Nuestro enfoque es sencillo: cuidar cada detalle, desde el primer
+          sorbo de café hasta el último bocado de un pastel casero.
         </p>
         <p className="text-lg mt-4">
-          Aquí celebramos lo local y lo auténtico, priorizando ingredientes
-          sostenibles y de productores cercanos. Creemos en el poder de la
-          comunidad, en las conversaciones que fluyen mientras compartes una
-          tapa o en las ideas que nacen con una taza en la mano.
+          Celebramos lo local y lo auténtico, priorizando ingredientes
+          sostenibles de productores cercanos. Creemos en el poder de la
+          comunidad, en las conversaciones que surgen al compartir una tapa o en
+          las ideas que nacen con una taza en las manos.
         </p>
         <p className="text-lg mt-4">
-          En Bejaus, no solo queremos que te sientas como en casa; queremos que
-          encuentres un lugar que inspire tu día. Ven, siéntate y disfruta.
+          En Bejaus, queremos que te sientas como en casa y encuentres un lugar
+          que inspire tu día. Ven, siéntate y disfruta de la experiencia.
         </p>
         <div className="mt-12">
           <h2>Nuestros valores</h2>
           <ImageTextSection
             title="Calidad"
-            description="Cada producto que ofrecemos está cuidadosamente seleccionado y preparado, asegurando siempre una experiencia excepcional a un precio justo."
+            description="Seleccionamos cuidadosamente cada producto para ofrecerte una experiencia excepcional, siempre a un precio justo que refleje el valor de lo que ofrecemos."
             imageSrc="/coffee_break.jpg"
             imageAlt="Productos de calidad"
             imagePosition="left"
@@ -36,7 +36,7 @@ const AboutSection: React.FC = () => {
 
           <ImageTextSection
             title="Comunidad"
-            description="Somos un lugar para conectar, compartir y crear momentos memorables con vecinos y visitantes por igual."
+            description="Bejaus es el lugar donde vecinos y visitantes se conectan, creando momentos memorables y compartiendo buenos ratos en un ambiente relajado y amigable."
             imageSrc="/friends.jpg"
             imageAlt="Conexión comunitaria"
             imagePosition="right"
@@ -44,7 +44,7 @@ const AboutSection: React.FC = () => {
 
           <ImageTextSection
             title="Localidad"
-            description="Apoyamos a los productores locales utilizando ingredientes de proximidad, celebrando lo mejor de nuestra tierra."
+            description="Apoyamos a productores locales utilizando ingredientes frescos y de proximidad, celebrando lo mejor de nuestra tierra y apoyando la economía local."
             imageSrc="/toast2.jpg"
             imageAlt="Productos locales"
             imagePosition="left"
@@ -52,7 +52,7 @@ const AboutSection: React.FC = () => {
 
           <ImageTextSection
             title="Capital Humano"
-            description="Promovemos un ambiente de trabajo basado en el respeto, el apoyo mutuo y el desarrollo personal. Nuestra gestión humana y cercana garantiza que cada colaborador se sienta valorado y sea una parte esencial de nuestro éxito."
+            description="Fomentamos un ambiente de trabajo respetuoso, cercano y colaborativo, donde cada miembro se siente valorado y parte esencial de nuestro éxito."
             imageSrc="/happy_employee.jpg"
             imageAlt="Equipo de Bejaus"
             imagePosition="right"
