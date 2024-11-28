@@ -1,4 +1,4 @@
-import LocationHours from "./LocationHours";
+// import LocationHours from "./LocationHours";
 import SocialMediaFeed from "./SocialMediaFeed";
 
 interface FooterProps {

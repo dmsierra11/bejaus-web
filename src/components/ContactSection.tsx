@@ -13,8 +13,8 @@ interface ContactSectionProps {
 
 export default function ContactSection({
   title = "Contacta con nosotros",
-  onSubmit,
-}: ContactSectionProps) {
+}: // onSubmit,
+ContactSectionProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
