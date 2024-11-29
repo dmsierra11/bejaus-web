@@ -1,4 +1,5 @@
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Bejaus - Coffee & Brunch in Barcelona",
@@ -15,7 +16,10 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/bri8nqg.css" />
       </head>
-      <body className="bg-background text-primary">{children}</body>
+      <body className="bg-background text-primary">
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
