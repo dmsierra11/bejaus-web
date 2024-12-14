@@ -19,9 +19,9 @@ export default function ImageTextSection({
 }: ImageTextSectionProps) {
   return (
     <section
-      className={`p-8 ${theme === "primary" ? "bg-primary" : "bg-background"} ${
-        theme === "primary" ? "text-background" : "text-primary"
-      }`}
+      className={`mt-8 ${
+        theme === "primary" ? "bg-primary" : "bg-background"
+      } ${theme === "primary" ? "text-background" : "text-primary"}`}
     >
       <div
         className={`max-w-6xl mx-auto flex flex-col ${
