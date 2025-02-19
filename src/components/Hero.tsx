@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BejausLogo from "../../public/bejaus_02.svg";
 
 interface HeroProps {
@@ -18,6 +18,22 @@ export default function Hero({
   videoSrc,
   onButtonClick,
 }: HeroProps) {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const rotation = scrollY % 360; // Calculate rotation based on scroll position
+
   return (
     <div className="relative min-h-screen">
       {/* Video Background */}
@@ -39,8 +55,11 @@ export default function Hero({
         {/* Header */}
         <header className="flex justify-between items-center p-6">
           <div className="relative">
-            <div className="absolute top-0 left-0">
-              <BejausLogo className="h-32 w-auto" />
+            <div className="fixed top-0 left-0">
+              <BejausLogo
+                className="h-32 w-auto"
+                style={{ transform: `rotate(${rotation}deg)` }}
+              />
             </div>
           </div>
           {/* <nav>
