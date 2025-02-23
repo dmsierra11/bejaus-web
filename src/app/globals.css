@@ -78,3 +78,10 @@ em {
 html {
   scroll-behavior: smooth;
 }
+
+/* styles.css or App.css */
+.divider {
+  height: 1px;
+  background-color: #ccc;
+  margin: 16px 0;
+}

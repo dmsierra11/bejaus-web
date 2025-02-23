@@ -4,8 +4,12 @@ import Hero from "@/components/Hero";
 // import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
+import MenuSection from "@/components/MenuSection";
+import useMenuItems from "@/hooks/use-menu-items";
 
 export default function Home() {
+  const menuItems = useMenuItems();
+
   return (
     <main>
       <Hero
@@ -24,6 +28,8 @@ export default function Home() {
       <AboutSection />
 
       {/* <ContactSection title="Contacta con nosotros" /> */}
+
+      <MenuSection sectionTitle="Nuestro Menú" menuItems={menuItems} />
 
       <Footer />
     </main>
