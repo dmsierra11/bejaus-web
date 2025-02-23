@@ -37,7 +37,7 @@ export default function MenuSection({
                 <h5 className="text-lg font-bold mb-2">{item.title}</h5>
                 <div className="flex row justify-between mb-2">
                   <p className="text-gray-600">{item.description}</p>
-                  <p className="text-gray-600">${item.price}</p>
+                  <p className="text-gray-600">{item.price}€</p>
                 </div>
                 <div className="divider" />
               </div>

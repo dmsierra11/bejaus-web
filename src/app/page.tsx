@@ -5,56 +5,11 @@ import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import AboutSection from "@/components/AboutSection";
 import MenuSection from "@/components/MenuSection";
-import { Menu } from "@/types/menu";
-
-const menuItems: Menu = {
-  Café: [
-    {
-      title: "Espresso",
-      description: "Espresso",
-      imageSrc: "/coffee1.png",
-      price: 2.5,
-    },
-    {
-      title: "Latte",
-      description: "Latte",
-      imageSrc: "/coffee1.png",
-      price: 3,
-    },
-    {
-      title: "Batch Brew",
-      description: "Batch Brew",
-      imageSrc: "/coffee1.png",
-      price: 3,
-    },
-  ],
-  Desayunos: [
-    {
-      title: "Tostada",
-      description: "Tostada",
-      imageSrc: "/coffee1.png",
-      price: 2.5,
-    },
-  ],
-  "Platos Especiales": [
-    {
-      title: "Tostada",
-      description: "Tostada",
-      imageSrc: "/coffee1.png",
-      price: 2.5,
-    },
-  ],
-  "Platos de la Casa": [
-    {
-      title: "Tostada",
-      description: "Tostada",
-      imageSrc: "/coffee1.png",
-      price: 2.5,
-    },
-  ],
-};
+import useMenuItems from "@/hooks/use-menu-items";
 
 export default function Home() {
+  const menuItems = useMenuItems();
+
   return (
     <main>
       <Hero
