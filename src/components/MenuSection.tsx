@@ -1,13 +1,20 @@
-import { Menu } from "@/types/menu";
+import Image from "next/image";
+
+interface MenuItem {
+  title: string;
+  description: string;
+  imageSrc: string;
+}
+
 interface MenuSectionProps {
   sectionTitle: string;
-  menuItems: Menu;
+  items: MenuItem[];
   theme?: "primary" | "secondary";
 }
 
 export default function MenuSection({
   sectionTitle,
-  menuItems,
+  items,
   theme = "primary",
 }: Readonly<MenuSectionProps>) {
   return (
@@ -22,33 +29,23 @@ export default function MenuSection({
       >
         {sectionTitle}
       </h2>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-        {Object.entries(menuItems).map(([category, items]) => (
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {items.map((item, index) => (
           <div
-            key={category}
+            key={`${index}-${item.title}`}
             className={`p-6 ${
               theme === "primary" ? "bg-background" : ""
             } shadow-lg rounded-lg hover:shadow-xl transition-shadow`}
           >
-            <h4 className="text-xl font-bold mb-3">{category}</h4>
-            <div className="divider" />
-            {items.map((item) => (
-              <div key={item.title}>
-                <h5 className="text-lg font-bold mb-2">{item.title}</h5>
-                <div className="flex row justify-between mb-2">
-                  <p className="text-gray-600">{item.description}</p>
-                  <p className="text-gray-600">{item.price}€</p>
-                </div>
-                <div className="divider" />
-              </div>
-            ))}
-            {/* <Image
+            <Image
               src={item.imageSrc}
               alt={item.title}
               width={500}
               height={300}
               className="w-full h-48 object-cover mb-4 rounded"
-            /> */}
+            />
+            <h4 className="text-xl font-bold mb-3">{item.title}</h4>
+            <p className="text-gray-600">{item.description}</p>
           </div>
         ))}
       </div>
